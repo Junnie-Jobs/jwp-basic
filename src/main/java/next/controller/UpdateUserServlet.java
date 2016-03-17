@@ -1,4 +1,4 @@
-package next.model;
+package next.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import next.dao.UserDao;
+import next.model.User;
 
 @WebServlet("/users/update")
 public class UpdateUserServlet extends HttpServlet{

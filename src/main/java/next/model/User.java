@@ -1,6 +1,8 @@
 package next.model;
 
 import core.db.DataBase;
+import next.controller.PasswordMismatchException;
+import next.controller.UserNotFoundException;
 
 public class User {
 	private String userId;

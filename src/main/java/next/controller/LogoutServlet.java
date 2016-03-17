@@ -1,4 +1,4 @@
-package next.model;
+package next.controller;
 
 import java.io.IOException;
 
