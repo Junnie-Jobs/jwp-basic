@@ -67,4 +67,20 @@ public class UserDao {
 			}
 		}
 	}
+
+	public void updateUser(User user) {
+		
+		String sql = "update USERS set password = ?, name = ?, email = ? where userId = ?";
+		PreparedStatement pstmt = getConnection().prepareStatement(sql);
+		pstmt.setString(1, user.getUserId());
+		pstmt.setString(2, user.getPassword());
+		pstmt.setString(3, user.getName());
+		pstmt.setString(4, user.getEmail());
+				
+		
+				
+		
+		
+	}
+
 }

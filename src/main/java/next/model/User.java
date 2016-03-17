@@ -1,5 +1,7 @@
 package next.model;
 
+import core.db.DataBase;
+
 public class User {
 	private String userId;
 	private String password;
@@ -65,6 +67,24 @@ public class User {
 			return false;
 		return true;
 	}
+
+	public boolean matchPassword(String newPassword) {
+
+		return this.password.equals(newPassword);
+
+	}
 	
-	
+	public static boolean login(String userId, String password) throws UserNotFoundException, PasswordMismatchException{
+		
+		User user = DataBase.findUserById(userId);
+		if(user.matchPassword(password)){
+			throw new UserNotFoundException();
+		}
+		if(user.matchPassword(password)){
+			throw new PasswordMismatchException();
+		}
+		
+		return true;
+	}
+
 }
