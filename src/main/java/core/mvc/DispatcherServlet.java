@@ -25,10 +25,13 @@ public class DispatcherServlet extends HttpServlet {
 		rm = new RequestMapping();
 		rm.initMapping();
 	}
-
+	
+	//서블릿은 기본적으로 요청이 들어오면 서비스로 옵니다.
+	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String requestUri = req.getRequestURI();
+		//요청 url이 나온다.
 		logger.debug("Method : {}, Request URI : {}", req.getMethod(), requestUri);
 
 		Controller controller = rm.findController(requestUri);
