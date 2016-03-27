@@ -34,7 +34,9 @@ public class DispatcherServlet extends HttpServlet {
 		Controller controller = rm.findController(requestUri);
 		try {
 			String viewName = controller.execute(req, resp);
-			move(viewName, req, resp);
+			if(viewName != null) {
+				move(viewName, req, resp);
+			}
 		} catch (Throwable e) {
 			logger.error("Exception : {}", e);
 			throw new ServletException(e.getMessage());
@@ -50,4 +52,5 @@ public class DispatcherServlet extends HttpServlet {
 		RequestDispatcher rd = req.getRequestDispatcher(viewName);
 		rd.forward(req, resp);
 	}
+
 }
