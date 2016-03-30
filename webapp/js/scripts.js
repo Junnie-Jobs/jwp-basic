@@ -67,9 +67,3 @@ var deleteAnswerDom = function(e) {
 	$(e.target).closest("article.article").remove();
 };
 
-//String.prototype.format = function() {
-//	var args = arguments;
-//	return this.replace(/{(\d+)}/g, function(match, number) {
-//		return typeof args[number] != 'undefined' ? args[number] : match;
-//	});
-//};

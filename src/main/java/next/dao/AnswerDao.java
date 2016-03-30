@@ -7,6 +7,9 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import next.model.Answer;
 import core.jdbc.JdbcTemplate;
 import core.jdbc.KeyHolder;
@@ -14,6 +17,9 @@ import core.jdbc.PreparedStatementCreator;
 import core.jdbc.RowMapper;
 
 public class AnswerDao {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(AnswerDao.class);
+	
 	public Answer insert(Answer answer) {
 		JdbcTemplate jdbcTemplate = new JdbcTemplate();
 		String sql = "INSERT INTO ANSWERS (writer, contents, createdDate, questionId) VALUES (?, ?, ?, ?)";
