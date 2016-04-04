@@ -36,3 +36,26 @@ String.prototype.format = function() {
         ;
   });
 };
+
+function deleteAnswer(e) {
+    e.preventDefault();
+
+
+    var queryString = $(this).closest("form").serialize();
+
+
+    $.ajax({
+      type: 'post',
+      url: "/api/qna/deleteAnswer",
+      data: queryString,
+      dataType: 'json',
+      error: function (xhr, status) {
+        alert("there is delete error");
+      },
+      success: function (json, status) {
+        var result = json.result;
+        if (result.status) {
+          $(this).closest('article').remove();
+        }
+      }
+    });
