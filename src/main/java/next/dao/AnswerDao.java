@@ -15,6 +15,10 @@ import core.jdbc.RowMapper;
 
 public class AnswerDao {
 	
+	/* ****** 요구사항11 ******
+	 Controller에서 접근하는 QuestionDao와 AnswerDao, DAO에서 데이터베이스 접근 로직을 구현할 때 사용하는 JdbcTemplate은 
+	 인스턴스를 여러 개 생성할 필요없다. 인스턴스를 하나 만 생성하도록 구현한다.(힌트 싱글톤 패턴)
+	  ****** 요구사항11 ****** */
 	private static AnswerDao answerDao = AnswerDao.getInstance();
 	private JdbcTemplate jdbcTemplate = JdbcTemplate.getInstance();
 

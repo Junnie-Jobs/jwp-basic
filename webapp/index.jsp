@@ -15,26 +15,26 @@
 		<div class="col-md-12 col-sm-12 col-lg-10 col-lg-offset-1">
 			<div class="panel panel-default qna-list">
 				<ul class="list">
-					<c:forEach items="${questions}" var="eachQuestion">
-						<li>
-							<div class="wrap">
-								<div class="main">
-									<strong class="subject"> <a
-										href="/qna/show?questionId=${eachQuestion.questionId}">${eachQuestion.title}</a>
-									</strong>
-									<div class="auth-info">
-										<i class="icon-add-comment"></i> <span class="time"><fmt:formatDate
-												pattern="yyyy-MM-dd HH:mm:ss"
-												value="${eachQuestion.createdDate}" /></span> <a href="#"
-											class="author">${eachQuestion.writer}</a>
-									</div>
-									<div class="reply" title="댓글">
-										<i class="icon-reply"></i> <span class="point">${eachQuestion.countOfComment}</span>
-									</div>
-								</div>
-							</div>
-						</li>
-					</c:forEach>
+<c:forEach items="${questions}" var="eachQuestion">
+	<li>
+		<div class="wrap">
+			<div class="main">
+				<strong class="subject"> <a
+					href="/qna/show?questionId=${eachQuestion.questionId}">${eachQuestion.title}</a>
+				</strong>
+				<div class="auth-info">
+					<i class="icon-add-comment"></i> <span class="time"><fmt:formatDate
+							pattern="yyyy-MM-dd HH:mm:ss"
+							value="${eachQuestion.createdDate}" /></span> <a href="#"
+						class="author">${eachQuestion.writer}</a>
+				</div>
+				<div class="reply" title="댓글">
+					<i class="icon-reply"></i> <span class="point">${eachQuestion.countOfComment}</span>
+				</div>
+			</div>
+		</div>
+	</li>
+</c:forEach>
 					<%-- <c:forEach items="${questions}" var="each">
 				<li>
 					<div class="wrap">

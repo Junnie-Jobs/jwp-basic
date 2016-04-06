@@ -88,4 +88,8 @@ public class User {
 	public String toString() {
 		return "User [userId=" + userId + ", name=" + name + ", email=" + email + "]";
 	}
+
+	public boolean isCheckUser(String user) {
+		return userId.equals(user);
+	}
 }

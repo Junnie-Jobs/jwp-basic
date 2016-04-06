@@ -17,6 +17,11 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/* ****** 요구사항6 ******
+자바 기반으로 웹 프로그래밍을 할 경우 한글이 깨진다. 한글이 깨지는 문제를 해결하기 위해 ServletFilter를 활요해 문제를 해결할 수 있다. 
+core.web.filter.CharacterEncodingFilter에 어 노테이션 설정을 통해 한글 문제를 해결한다.(힌트 : WebFilter annotation)
+ ****** 요구사항6 ****** */
+
 @WebFilter("/*")
 public class ResourceFilter implements Filter {
 	private static final Logger logger = LoggerFactory.getLogger(ResourceFilter.class);
